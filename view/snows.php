@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "RentASnow - Accueil";
+$title = "RentASnow - Snows";
 ?>
 
 <!-- ________ SLIDER_____________-->
@@ -19,15 +19,15 @@ $title = "RentASnow - Accueil";
     </div>
 </div>
 
-<!-- ________ NEWS _____________-->
+<!-- ________ Products_____________-->
 <div class="span12">
-    <h1>Les news </h1>
-    <?php foreach ($news as $onepieceofnews) { ?>
+    <h1>Les Snows</h1>
+    <?php foreach ($snows as $products) { ?>
         <div class="row mt-4">
-            <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?></div>
-            <h4 class="col-4"><?= $onepieceofnews['title'] ?></h4>
+            <div class="col-2"><?= date('d.M.Y', strtotime($products['date'])) ?></div>
+            <h4 class="col-4"><?= $products['title'] ?></h4>
         </div>
-        <div class="row ml-5"><?= $onepieceofnews['details'] ?></div>
+        <div class="row ml-5"><?= $products['details'] ?></div>
     <?php } ?>
 </div>
 

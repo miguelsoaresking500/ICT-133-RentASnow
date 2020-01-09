@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+
     <title><?= $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -49,7 +50,7 @@
                         <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
                             NAVIGATION <span class="icon-chevron-down icon-white"></span>
                         </button>
-                        <div class="nav-collapse collapse">
+                        <div class="nav">
                             <ul class="nav nav-pills ddmenu">
                                 <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                                 <li><a href="index.php?action=home">Home</a></li>
@@ -67,6 +68,7 @@
                 <div class="row-fluid">
                     <div class="span12" id="divMain">
                         <?= $content; ?>
+
                     </div>
                 </div>
                 <div id="footerInnerSeparator"></div>
