@@ -15,4 +15,10 @@ function snows()
     $snows = getSnows();
     require_once 'view/snows.php';
 }
+
+function login()
+{
+
+    require_once 'view/Login.php';
+}
 ?>
