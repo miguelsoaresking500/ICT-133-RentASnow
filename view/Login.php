@@ -7,11 +7,16 @@
  */
 ob_start();
 $title = "RentASnow - Login";
+$uname="admin";
+$pwd="admin";
+session_start();
+
 ?>
 
 <div class="login">
     <h1>Login</h1>
-    <form method="post">
+    <form  method="post">
+
         <input type="text" name="u" placeholder="Username" required="required" />
         <input type="password" name="p" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
