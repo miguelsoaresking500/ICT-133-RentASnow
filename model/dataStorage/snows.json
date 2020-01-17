@@ -1,17 +1,38 @@
 [
   {
-    "title": "Dingue !!!",
-    "date": "2020-01-02",
-    "details": "Notre pote Pat d\u00e9croche la m\u00e9daille de bronze aux JoJ !!!"
+    "id": 1,
+    "modele": "B101",
+    "marque": "Burton",
+    "bigimage": "B101.jpg",
+    "smallimage": "B101_small.jpg",
+    "dateretour": "",
+    "disponible": true
   },
   {
-    "title": "Enfin",
-    "date": "2019-12-02",
-    "details": "Le Burton X512 est l\u00e0! Selon les sp\u00e9cialistes, c'est ce qui se fait de mieux pour le Big Air."
+    "id": 2,
+    "modele": "B126",
+    "marque": "Free Thinker",
+    "bigimage": "B126.jpg",
+    "smallimage": "B126_small.jpg",
+    "dateretour": "2020-01-09",
+    "disponible": false
   },
   {
-    "title": "Des renforts",
-    "date": "2020-01-01",
-    "details": "Nous accueillons Lo\u00efc d\u00e8s le mois prochain pour renforcer notre \u00e9quipe de pr\u00e9parateurs"
+    "id": 3,
+    "modele": "B327",
+    "marque": "Burton",
+    "bigimage": "B327.jpg",
+    "smallimage": "B327_small.jpg",
+    "dateretour": "2020-02-02",
+    "disponible": false
+  },
+  {
+    "id": 4,
+    "modele": "K067",
+    "marque": "Prior",
+    "bigimage": "K067.jpg",
+    "smallimage": "K067_small.jpg",
+    "dateretour": "2020-01-15",
+    "disponible": false
   }
 ]

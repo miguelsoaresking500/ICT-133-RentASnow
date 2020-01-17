@@ -20,14 +20,18 @@ $title = "RentASnow - Snows";
 </div>
 
 <!-- ________ Products_____________-->
-<div class="span12">
+<div class="">
     <h1>Les Snows</h1>
     <?php foreach ($snows as $products) { ?>
-        <div class="row mt-4">
-            <div class="col-2"><?= date('d.M.Y', strtotime($products['date'])) ?></div>
-            <h4 class="col-4"><?= $products['title'] ?></h4>
+        <div class="row mt-8">
+            <h4 class="col-10"><a>Modele:</a><?= $products['modele'] ?></h4>
         </div>
-        <div class="row ml-5"><?= $products['details'] ?></div>
+        <div class="row ml-9"><a>Marque:</a><?= $products['marque'] ?></div>
+        <div><IMG src="view/images/<?= $products['smallimage'] ?>" class="row ml-6"></div>
+        <div class="row ml-9"><a>Date de retour:</a><?= $products['dateretour'] ?></div>
+        <div class="row ml-9"><a>Disponibilité</a><?= $products['disponible'] ?></div>
+
+
     <?php } ?>
 </div>
 

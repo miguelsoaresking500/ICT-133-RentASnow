@@ -45,7 +45,8 @@
                     <a href="index.php" id="divSiteTitle">Rent A Snow</a><br/>
                     <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
                 </div>
-                <div id="divMenuRight" class="pull-right">
+                <div class="pull-right">
+
                     <div class="navbar">
                         <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
                             NAVIGATION <span class="icon-chevron-down icon-white"></span>
@@ -55,11 +56,21 @@
                                 <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                                 <li><a href="index.php?action=home">Home</a></li>
                                 <li><a href="index.php?action=displaySnows">Snows</a></li>
-                                <?php if (!isset($_SESSION['username'])){
-                                    echo "<li><a href='index.php?action=displayLogin'>Login</a></li>";
+                                <?php
+                                if(isset($_SESSION['user']))
+                                {
+
+
+
+                                    echo '<li><a href="index.php?action=DisConnect">Logout</a></li>';
                                 }else
-                                    echo "<li><a href='index.php?action=displayLogin'>Logout</a></li>";
+                                    echo '<li><a href="index.php?action=displayLogin">Login</a></li>';
+
+                                if (isset($_SESSION['user'])) {
+                                    echo $_SESSION["user"];
+                                }
                                 ?>
+
                             </ul>
                         </div>
 
