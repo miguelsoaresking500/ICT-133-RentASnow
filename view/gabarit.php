@@ -57,7 +57,7 @@
 
 
 
-                            echo '<li><a href="index.php?action=DisConnect">Logout</a></li>';
+                            echo '<li><a href="index.php?action=Logout">Logout</a></li>';
                         }else
                             echo '<li><a href="index.php?action=displayLogin">Login</a></li>';
 

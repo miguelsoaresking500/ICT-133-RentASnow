@@ -32,7 +32,7 @@ switch ($action) {
 
     default:
         $title = 'RentASnow - Accueil';
-        require_once 'view/home.php';
+        home();
         break;
 
 }

@@ -25,25 +25,21 @@ function TryLogin()
 {
     $Logins = getLogs();
     if (isset($_POST['user']) && isset($_POST['password'])) {
-        $_SESSION['user'] = $_POST['user'];
-        $_SESSION['password'] = $_POST['password'];
-        foreach ($Logins as $logs) {
-            if ($logs['user'] == $_SESSION['user']) {
-
-                if ($logs['Password'] == $_SESSION['Password']) {
-                    home();
+        foreach ($Logins as $login) {
+            if ($login['user'] == $_POST['user']) {
+                if ($login['password'] == $_POST['password']) {
+                    $_SESSION['user'] = $_POST['user'];
                 }
 
             }
         }
     }
-    session_unset();
-    require_once 'view/home.php';
+    home();
 }
 
 function Logout()
 {
-    session_unset();
+    unset($_SESSION['user']);
     require_once 'view/home.php';
 }
 
