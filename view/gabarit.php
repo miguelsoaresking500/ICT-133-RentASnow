@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-
     <title><?= $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,51 +39,43 @@
 
     <div class="divPanel notop nobottom">
         <div class="row-fluid">
-            <div class="span12">
+            <div class="row">
                 <div id="divLogo" class="pull-left">
                     <a href="index.php" id="divSiteTitle">Rent A Snow</a><br/>
                     <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
                 </div>
-                <div class="pull-right">
-
-                    <div class="navbar">
-                        <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
-                            NAVIGATION <span class="icon-chevron-down icon-white"></span>
-                        </button>
-                        <div class="nav">
-                            <ul class="nav nav-pills ddmenu">
-                                <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
-                                <li><a href="index.php?action=home">Home</a></li>
-                                <li><a href="index.php?action=displaySnows">Snows</a></li>
-                                <?php
-                                if(isset($_SESSION['user']))
-                                {
+            </div>
+            <div class="row">
+                <div class="navbar">
+                    <ul class="nav nav-pills ddmenu">
+                        <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
+                        <li><a href="index.php?action=home">Home</a></li>
+                        <li><a href="index.php?action=displaySnows">Snows</a></li>
+                        <?php
+                        if(isset($_SESSION['user']))
+                        {
 
 
 
-                                    echo '<li><a href="index.php?action=DisConnect">Logout</a></li>';
-                                }else
-                                    echo '<li><a href="index.php?action=displayLogin">Login</a></li>';
+                            echo '<li><a href="index.php?action=DisConnect">Logout</a></li>';
+                        }else
+                            echo '<li><a href="index.php?action=displayLogin">Login</a></li>';
 
-                                if (isset($_SESSION['user'])) {
-                                    echo $_SESSION["user"];
-                                }
-                                ?>
+                        if (isset($_SESSION['user'])) {
+                            echo $_SESSION["user"];
+                        }
+                        ?>
 
-                            </ul>
-                        </div>
-
+                    </ul>
                 </div>
             </div>
         </div>
 
         <div class="contentArea">
-
             <div class="divPanel notop page-content">
                 <div class="row-fluid">
                     <div class="span12" id="divMain">
                         <?= $content; ?>
-
                     </div>
                 </div>
                 <div id="footerInnerSeparator"></div>
@@ -148,10 +139,10 @@
                 </div>
                 <div class="row text-center">
                     <div class="social_bookmarks">
-                        <a href="#"><i class="social foundicon-facebook"></i> Facebook</a>
-                        <a href=""><i class="social foundicon-twitter"></i> Twitter</a>
-                        <a href="#"><i class="social foundicon-pinterest"></i> Pinterest</a>
-                        <a href="#"><i class="social foundicon-rss"></i> Rss</a>
+                        <a href="#"><i class="social foundicon-facebook"></i> Facebook</a>
+                        <a href=""><i class="social foundicon-twitter"></i> Twitter</a>
+                        <a href="#"><i class="social foundicon-pinterest"></i> Pinterest</a>
+                        <a href="#"><i class="social foundicon-rss"></i> Rss</a>
                     </div>
                 </div>
             </div>
