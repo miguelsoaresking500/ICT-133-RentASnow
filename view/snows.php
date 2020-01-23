@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Miguel.SOARES
+ * Date: 10.01.2020
+ * Time: 14:48
+ */
+
 ob_start();
 $title = "RentASnow - Snows";
 ?>
@@ -22,6 +29,7 @@ $title = "RentASnow - Snows";
 <!-- ________ Products_____________-->
 <div class="">
     <h1>Les Snows</h1>
+    //boucle qui nous affiche la liste des snows
     <?php foreach ($snows as $products) { ?>
         <div class="row mt-8">
             <h4 class="col-10"><a>Modele:</a><?= $products['modele'] ?></h4>

@@ -1,4 +1,13 @@
-﻿<!DOCTYPE HTML>
+﻿<?php
+/**
+ * Created by PhpStorm.
+ * User: Miguel.SOARES
+ * Date: 10.01.2020
+ * Time: 14:48
+ */
+
+?>
+<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -51,6 +60,7 @@
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=displaySnows">Snows</a></li>
+                        <!--if qui nous affiche login si on est pas logués et logout si on est logués-->
                         <?php
                         if(isset($_SESSION['user']))
                         {
@@ -58,10 +68,13 @@
 
 
                             echo '<li><a href="index.php?action=Logout">Logout</a></li>';
+                            echo '<li><a href="index.php?action=Parametres">Parametres</a></li>';
                         }else
                             echo '<li><a href="index.php?action=displayLogin">Login</a></li>';
+                        if (isset($_SESSION['user']) == '') {
+                            echo '<li><a href="index.php?action=displaySignin">Sign In</a></li>';
 
-                        if (isset($_SESSION['user'])) {
+                        }if (isset($_SESSION['user'])) {
                             echo $_SESSION["user"];
                         }
                         ?>

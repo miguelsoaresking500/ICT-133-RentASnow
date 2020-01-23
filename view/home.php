@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Miguel.SOARES
+ * Date: 10.01.2020
+ * Time: 14:48
+ */
+
 ob_start();
 $title = "RentASnow - Accueil";
 ?>
@@ -22,6 +29,7 @@ $title = "RentASnow - Accueil";
 <!-- ________ NEWS _____________-->
 <div class="span12">
     <h1>Les news </h1>
+    //boucle qui va afficher les news
     <?php foreach ($news as $onepieceofnews) { ?>
         <div class="row mt-4">
             <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?></div>

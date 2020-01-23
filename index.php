@@ -1,9 +1,16 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Miguel.SOARES
+ * Date: 10.01.2020
+ * Time: 14:48
+ */
+
 // Start the session
 session_start();
 require "controler/controler.php";
 
-
+//switch qui nous permets de chosir le case pour que la bonne page soit affichée et la bonne funtion utilisée
 $action = $_GET['action'];
 switch ($action) {
     case 'home':
@@ -22,12 +29,26 @@ switch ($action) {
         login();
         break  ;
 
+    case 'displaySignin':
+        $title = "RentASnow - Signin";
+        signin();
+        break  ;
+
+    case"trySignin":
+        trySignin();
+        break;
+
+
     case"tryLogin":
-        TryLogin();
+        tryLogin();
+        break;
+
+    case"Parametres":
+        Settings();
         break;
 
     case"Logout":
-        Logout();
+        logout();
         break;
 
     default:
