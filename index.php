@@ -51,7 +51,21 @@ switch ($action) {
         logout();
         break;
 
-    default:
+    case"showUsers":
+        $title = "RentASnow - showUsers";
+        showUsers();
+        break;
+
+    case"modifUser":
+        $title = "RentASnow - modifUser";
+        modifUser();
+        break;
+
+    case "DelUser":
+        DelUser();
+        break;
+
+        default:
         $title = 'RentASnow - Accueil';
         home();
         break;

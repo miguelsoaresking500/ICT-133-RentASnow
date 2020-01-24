@@ -19,8 +19,15 @@ function getSnows()
 function getLogs(){
     return json_decode(file_get_contents("model/dataStorage/Logs.json"),true);
 }
-
+//fonction qui va créer les sessions dans le ficher Json
 function createLogs($data){
     file_put_contents("model/dataStorage/Logs.json",json_encode($data));
 }
-?>
+//fonction qui va supprimer les sessions dans le ficher Json
+function Delacc($data){
+    file_put_contents("model/dataStorage/Logs.json",json_encode($data));
+}
+
+
+
+

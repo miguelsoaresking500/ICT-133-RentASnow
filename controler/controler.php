@@ -77,7 +77,34 @@ function trySignin()
     $_POST["user"] = null;
     unset($_POST["password"]);
 }
+//Fonction qui nous permets de voir les infos du compte qui est dans le fichier Json
 function Settings(){
     require_once 'view/Settings.php';
 }
+//Fonction qui nous permets d'afficher les comptes de tout les utilisateurs (Que l'admin)
+function showUsers(){
+    $liste = getLogs();
+    require_once 'view/showUsers.php';
+}
+//Fonction qui nous permets modifier les comptes de tout les utilisateurs (Que l'admin)
+function modifUser(){
+    $liste = getLogs();
+    require_once 'view/modifUser.php';
+}
+//Fonction qui nous permets Supprimer les comptes de tout les utilisateurs (Que l'admin)
+function DelUser(){
+
+    $liste = getLogs();
+$i=0;
+    foreach ($liste as $user){
+        if(isset($_POST[$user["id"]])){
+            unset($liste[$i]);
+            Delacc($liste);
+        }
+        $i++;
+    }
+    modifUser();
+}
 ?>
+
+
