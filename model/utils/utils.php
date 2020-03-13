@@ -45,7 +45,7 @@ foreach ($users as $user) {
         getPDO();
         $query = "UPDATE users SET password=:password WHERE id=:id";
         $statement = getPDO()->prepare($query);//prepare query
-        $statement->execute([':id' => $users['id'],':password' => $hash]);//execute query
+        $statement->execute(['id' => $users['id'],'password' => $hash]);//execute query
         $dbh = null;
     } catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br/>";
