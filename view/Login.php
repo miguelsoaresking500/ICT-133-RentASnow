@@ -8,16 +8,16 @@
 
 ob_start();
 $title = "RentASnow - Login";
-
-
+$Logins=GetLogs();
+var_dump($Logins);
 ?>
 
 <div class="container">
     <h1>Login</h1>
     <form action="index.php?action=tryLogin" method="post">
 
-        <input type="text" name="user" placeholder="Username"  required="required" />
-        <input type="password" name="password" placeholder="Password" required="required" />
+        <input type="text" name="email" placeholder="Username"  required="required" />
+        <input type="password" name="firstname" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
     </form>
 </div>

@@ -32,12 +32,14 @@ $title = "RentASnow - Snows";
     //boucle qui nous affiche la liste des snows
     <?php foreach ($snows as $products) { ?>
         <div class="row mt-8">
-            <h4 class="col-10"><a>Modele:</a><?= $products['modele'] ?></h4>
+            <h4 class="col-10"><a>Modele:</a><?= $products['model'] ?></h4>
         </div>
-        <div class="row ml-9"><a>Marque:</a><?= $products['marque'] ?></div>
-        <div><IMG src="view/images/<?= $products['smallimage'] ?>" class="row ml-6"></div>
-        <div class="row ml-9"><a>Date de retour:</a><?= $products['dateretour'] ?></div>
-        <div class="row ml-9"><a>Disponibilité</a><?= $products['disponible'] ?></div>
+        <div class="row ml-9"><a>Marque:</a><?= $products['brand'] ?></div>
+        <div class="row ml-9"><a>description:</a><?= $products['description'] ?></div>
+        <div><IMG src="view/images/<?= $products['photo'] ?>" class="row ml-6"></div>
+        <div class="row ml-9"><a>prix neuf:</a><?= $products['pricenew'] ?></div>
+        <div class="row ml-9"><a>prix bon:</a><?= $products['pricegood'] ?></div>
+        <div class="row ml-9"><a>prix vieux:</a><?= $products['priceold'] ?></div>
 
 
     <?php } ?>

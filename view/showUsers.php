@@ -17,7 +17,8 @@ $title = "RentASnow - showUsers";
         <?php
         foreach ($liste as $user){
             echo "<tr>";
-            echo "<td> $user[user]</td>";
+            echo "<td> $user[email]</td>";
+            echo "<td> $user[phonenumber]</td>";
             echo "<td> $user[id]</td>";
             echo "</tr>";
         }
