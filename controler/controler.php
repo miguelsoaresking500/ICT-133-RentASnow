@@ -34,18 +34,21 @@ function signin()
 }
 //faire avec sql
 // Fonction qui va vérifier si il y un login avec un password qui correspond dans le fichier Json en utilisant la focntion getLogs qui est dans le model
-function tryLogin()
+function tryLogin($email,$password)
 {
-    $Logins = getLogs();
-    if (isset($_POST['email']) && isset($_POST['firstname'])) {
-        foreach ($Logins as $login) {
-            if ($login['email'] == $_POST['email']) {
-                if ($login['firstname'] == $_POST['firstname']) {
-                    $_SESSION['email'] = $_POST['email'];
-                }
-
-            }
-        }
+    $user = getUserByEmail($email);
+    if(password_verify($password,$user['password'])){
+        die('ok');
+    }
+    else{
+        die('ops');
+    }
+    if (isset($_SESSION['username'])==false){
+        $_SESSION['fail']=true;
+        require_once'view/Login.php';
+    }else{
+        $_SESSION['fail']=false;
+        require_once 'view/home.php';
     }
     Home();
 }

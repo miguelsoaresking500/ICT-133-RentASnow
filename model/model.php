@@ -104,6 +104,25 @@ function getLogs()
 
     }
 
+function getUserByEmail($email)
+{
+    {
+        require ".constant.php";
+        try {
+            getPDO();
+            $query = "SELECT * FROM users where email=:email";
+            $statment = getPDO()->prepare($query);//prepare query
+            $statment->execute(['email' => $email]);//execute query
+            $queryResult = $statment->fetch(pdo::FETCH_ASSOC);//prepare result for client
+            $dbh = null;
+            return $queryResult;
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            return null;
+        }
+    }
+}
+
 
 
 
