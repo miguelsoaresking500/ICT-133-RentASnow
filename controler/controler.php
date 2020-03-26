@@ -51,7 +51,7 @@ function tryLogin($email,$password)
     }
     else{
         unset($_SESSION['user']);
-        $_SESSION['flashmessage'] = "Pas d'accords";
+        $_SESSION['flashmessage'] = "Pas d'accord";
         require_once 'view/Login.php';
     }
     Home();

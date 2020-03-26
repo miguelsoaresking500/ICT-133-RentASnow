@@ -64,10 +64,10 @@
                         <!--if qui nous affiche login si on est pas logués et logout si on est logués et le bouton pour l'admin-->
 
                         <?php
-                        if(isset($_SESSION['user']))
+                        if(isset($_SESSION['user']['firstname']))
                         {
 
-                            if($_SESSION['type']==2){
+                            if($_SESSION['user']['type']==2){
                                 echo '<li><a href="index.php?action=showUsers">Liste des Utilisateurs</a></li>';
                             }
 
@@ -79,8 +79,8 @@
                         if (isset($_SESSION['user']) == '') {
                             echo '<li><a href="index.php?action=displaySignin">Sign In</a></li>';
 
-                        }if (isset($_SESSION['user'])) {
-                            echo   $_SESSION['firstname'];
+                        }if (isset($_SESSION['user']['firstname'])) {
+                            echo   $_SESSION['user']['firstname'];
                         }
                         ?>
 
