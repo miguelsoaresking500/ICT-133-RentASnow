@@ -13,7 +13,9 @@ require_once 'model/model.php';
 function home()
 {
     $news = getNews();
+
     require_once 'view/home.php';
+
 }
 // Fonction qui va chercher les Snows dans le fichier Json en utilisant la fonction getSnows qui est dans le model
 function snows()
@@ -36,19 +38,21 @@ function signin()
 // Fonction qui va vérifier si il y un login avec un password qui correspond dans le fichier Json en utilisant la focntion getLogs qui est dans le model
 function tryLogin($email,$password)
 {
+
+
+    var_dump($email,$password,);
     $user = getUserByEmail($email);
-    if(password_verify($password,$user['password'])){
-        die('ok');
+    if(password_verify($password,$user['password']))
+    {
+        unset($user['password']);
+        $_SESSION['user'] = $user;
+        $_SESSION['flashmessage'] = 'Bienvenue'.$user[' firstname'];
+        require_once 'view/home.php';
     }
     else{
-        die('ops');
-    }
-    if (isset($_SESSION['username'])==false){
-        $_SESSION['fail']=true;
-        require_once'view/Login.php';
-    }else{
-        $_SESSION['fail']=false;
-        require_once 'view/home.php';
+        unset($_SESSION['user']);
+        $_SESSION['flashmessage'] = "Pas d'accords";
+        require_once 'view/Login.php';
     }
     Home();
 }

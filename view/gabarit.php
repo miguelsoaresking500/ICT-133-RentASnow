@@ -67,7 +67,7 @@
                         if(isset($_SESSION['user']))
                         {
 
-                            if($_SESSION['user']=="admin"){
+                            if($_SESSION['type']==2){
                                 echo '<li><a href="index.php?action=showUsers">Liste des Utilisateurs</a></li>';
                             }
 
@@ -80,7 +80,7 @@
                             echo '<li><a href="index.php?action=displaySignin">Sign In</a></li>';
 
                         }if (isset($_SESSION['user'])) {
-                            echo $_SESSION["user"];
+                            echo   $_SESSION['firstname'];
                         }
                         ?>
 

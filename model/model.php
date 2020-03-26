@@ -123,6 +123,33 @@ function getUserByEmail($email)
     }
 }
 
+function updatePasswords()
+{
+    $users = getUserByEmail($email);
+
+    foreach ($users as $u)
+    {
+        $hash = password_hash($u['firstname'],PASSWORD_DEFAULT);
+        echo $u['firstname']."=>$hash \n";
+
+        $id = $u['id'];
+        try
+        {
+            $dbh =  getPDO();
+            $query = "UPDATE users SET password = '$hash' WHERE id = $id";
+            $statement = $dbh->prepare($query);
+            $statement -> execute();
+            $queryResult = $statement->fetchAll();
+            $dbh = null;
+        }catch (PDOException $e)
+        {
+            print 'Error!:'.$e->getMessage().'<br/>';
+            return null;
+        }
+    }
+}
+?>
+
 
 
 

@@ -12,14 +12,16 @@ $title = "RentASnow - showUsers";
 <div>
     <table class="table">
         <thead>
-        <th>User </th>
         <th>id</th>
+        <th>Email </th>
+        <th>phonenumber</th>
         <?php
         foreach ($liste as $user){
             echo "<tr>";
+            echo "<td> $user[id]</td>";
             echo "<td> $user[email]</td>";
             echo "<td> $user[phonenumber]</td>";
-            echo "<td> $user[id]</td>";
+
             echo "</tr>";
         }
         ?>

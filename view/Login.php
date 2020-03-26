@@ -16,9 +16,9 @@ $title = "RentASnow - Login";
     <h1>Login</h1>
     <form action="index.php?action=tryLogin" method="post">
 
-        <input type="text" name="email" placeholder="Username"  required="required" />
+        <input type="text" name="email" placeholder="email"  required="required" />
         <input type="password" name="password" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
+        <button type="submit" href="index.php?action=tryLogin" class="btn btn-primary btn-block btn-large">Login</button>
     </form>
 </div>
 <?php

@@ -8,14 +8,17 @@
 
 // Start the session
 session_start();
+
 require "controler/controler.php";
 
 //switch qui nous permets de chosir le case pour que la bonne page soit affichée et la bonne funtion utilisée
 $action = $_GET['action'];
+updatePasswords();
 switch ($action) {
     case 'home':
         $title = 'RentASnow - Accueil';
         home();
+
         break;
 
     case 'displaySnows':
