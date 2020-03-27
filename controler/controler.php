@@ -113,6 +113,15 @@ $i=0;
     }
     modifUser();
 }
+
+
+
+function displaysnowdetails($id){
+    $snowtype = getSnowtype($id);
+    $snows = getSnowsOfType($id);
+var_dump($snows);die();
+    require_once 'view/displaySnowDetails.php';
+}
 ?>
 
 

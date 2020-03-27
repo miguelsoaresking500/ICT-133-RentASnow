@@ -19,7 +19,7 @@ function getNews()
 {
     require ".constant.php";
     try {
-        getPDO();
+        $dbh = getPDO();
         $query = "SELECT * FROM news inner join users on news.user_id = users.id";
         $statment = getPDO()->prepare($query);//prepare query
         $statment->execute();//execute query
@@ -37,12 +37,48 @@ function getSnows()
 {
     require ".constant.php";
     try {
-        getPDO();
+        $dbh = getPDO();
         $query = "SELECT * FROM snowtypes";
         $statment = getPDO()->prepare($query);//prepare query
         $statment->execute();//execute query
         $queryResult = $statment->fetchAll(pdo::FETCH_ASSOC);//prepare result for client
         $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+//fonction qui va chercher les snows dans le ficher Json
+function getSnowtype($id)
+{
+    require ".constant.php";
+    try {
+        $dbh =getPDO();
+        $query = "SELECT * FROM snowtypes where id=:id";
+        $statment = getPDO()->prepare($query);//prepare query
+        $statment->execute(['id' => $id]);//execute query
+        $queryResult = $statment->fetch(pdo::FETCH_ASSOC);//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+function getSnowsOfType($id)
+{
+    require ".constant.php";
+    try {
+        getPDO();
+        $query = 'SELECT * FROM snows where snowtype_id= :id';
+        $statment = getPDO()->prepare($query);//prepare query
+        $statment->execute(['id' => $id]);//execute query
+        $queryResult = $statment->fetchAll(pdo::FETCH_ASSOC);//prepare result for client
+        $dbh = null;
+        if ($debug)var_dump($queryResult);
         return $queryResult;
     } catch (PDOException $e) {
         print "Error!: " . $e->getMessage() . "<br/>";
@@ -55,7 +91,7 @@ function getLogs()
     {
         require ".constant.php";
         try {
-            getPDO();
+            $dbh = getPDO();
             $query = "SELECT * FROM users";
             $statment = getPDO()->prepare($query);//prepare query
             $statment->execute();//execute query
@@ -73,7 +109,7 @@ function getLogs()
     {
         require ".constant.php";
         try {
-            getPDO();
+            $dbh =getPDO();
             $query = "INSERT INTO filmmakers (filmmakersnumber,firstname,lastname,birthname,nationality)VALUES(:filmmakersnumber,:firstname,:lastname,:birthname,:nationality) ";
             $statement = getPDO()->prepare($query);//prepare query
             $statement->execute($users);//execute query
@@ -91,7 +127,7 @@ function getLogs()
     {
         require ".constant.php";
         try {
-            getPDO();
+            $dbh =getPDO();
             $query = "DELETE FROM filmmakers  WHERE id=:id";
             $statement = getPDO()->prepare($query);//prepare query
             $statement->execute([':id'=>$users]);//execute query
@@ -148,6 +184,7 @@ function updatePasswords()
         }
     }
 }
+
 ?>
 
 

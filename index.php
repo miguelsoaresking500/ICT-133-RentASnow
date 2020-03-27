@@ -37,6 +37,11 @@ switch ($action) {
         signin();
         break  ;
 
+    case 'displaySnowDetails':
+        $title = 'RentASnow - Snows';
+        displaysnowdetails($id);
+        break;
+
     case"trySignin":
         trySignin();
         break;

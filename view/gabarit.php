@@ -36,9 +36,10 @@
     <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
 
     <link href="css/subtlepatterns/custom.css" rel="stylesheet" type="text/css"/>
-
+    <link rel="stylesheet" href="css/style.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="css/style.css"></script>
 
 </head>
 <body id="pageBody">
