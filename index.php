@@ -11,7 +11,8 @@ session_start();
 
 require "controler/controler.php";
 
-//switch qui nous permets de chosir le case pour que la bonne page soit affichée et la bonne funtion utilisée
+//switch qui nous permets de chosir le case pour que la bonne page soit affichée et la bonne funtion utilisée7
+
 $action = $_GET['action'];
 updatePasswords();
 switch ($action) {
@@ -39,6 +40,7 @@ switch ($action) {
 
     case 'displaySnowDetails':
         $title = 'RentASnow - Snows';
+        $id = $_GET['id'];
         displaysnowdetails($id);
         break;
 

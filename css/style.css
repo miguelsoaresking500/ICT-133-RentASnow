@@ -15,3 +15,11 @@
     padding: 2px;
     margin: 2px ;
 }
+
+.imagedetail{
+    width: 150px;
+}
+
+.clickable{
+    cursor: pointer;
+}

@@ -55,7 +55,7 @@ function getSnowtype($id)
 {
     require ".constant.php";
     try {
-        $dbh =getPDO();
+        getPDO();
         $query = "SELECT * FROM snowtypes where id=:id";
         $statment = getPDO()->prepare($query);//prepare query
         $statment->execute(['id' => $id]);//execute query
@@ -73,7 +73,7 @@ function getSnowsOfType($id)
     require ".constant.php";
     try {
         getPDO();
-        $query = 'SELECT * FROM snows where snowtype_id= :id';
+        $query = "SELECT * FROM snows where snowtype_id=:id";
         $statment = getPDO()->prepare($query);//prepare query
         $statment->execute(['id' => $id]);//execute query
         $queryResult = $statment->fetchAll(pdo::FETCH_ASSOC);//prepare result for client
