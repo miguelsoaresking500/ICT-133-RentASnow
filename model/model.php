@@ -51,6 +51,24 @@ function getSnows()
 }
 
 //fonction qui va chercher les snows dans le ficher Json
+function getRealSnow($id)
+{
+    require ".constant.php";
+    try {
+        $dbh = getPDO();
+        $query = "SELECT * FROM snows inner join snowtypes on snowtype_id = snowtypes.id where snows.id=:id";
+        $statment = getPDO()->prepare($query);//prepare query
+        $statment->execute(['id' => $id]);//execute query
+        $queryResult = $statment->fetch(pdo::FETCH_ASSOC);//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+//fonction qui va chercher les snows dans le ficher Json
 function getSnowtype($id)
 {
     require ".constant.php";

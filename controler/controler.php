@@ -122,6 +122,11 @@ function displaysnowdetails($id){
 
     require_once 'view/displaySnowDetails.php';
 }
+
+function displayRealsnowdetails($id){
+    $snow = getRealSnow($id);
+    require_once 'view/displayRealSnowDetails.php';
+}
 ?>
 
 

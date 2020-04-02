@@ -44,6 +44,12 @@ switch ($action) {
         displaysnowdetails($id);
         break;
 
+    case 'displayRealSnowDetails':
+        $title = 'RentASnow - Snows';
+        $id = $_GET['id'];
+        displayRealsnowdetails($id);
+        break;
+
     case"trySignin":
         trySignin();
         break;

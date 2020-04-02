@@ -25,7 +25,7 @@ $title = "RentASnow - Snows"
         <th>Disponible</th>
     </tr>
     <?php foreach ($snows as $snow) { ?>
-        <tr class="clickable" data-href="?action=displayREalSnowDetails&id=<?=$snow['id']?>">
+        <tr class="clickable" data-href="?action=displayRealSnowDetails&id=<?=$snow['id']?>">
             <th><?= $snow['code'] ?></th>
             <th><?= $snow['length'] ?></th>
             <th><?= getTextState($snow['state']) ?></th>
