@@ -123,10 +123,17 @@ function displaysnowdetails($id){
     require_once 'view/displaySnowDetails.php';
 }
 
-function displayRealsnowdetails($id){
-    $snow = getRealSnow($id);
+function displayRealsnowdetails($snowid){
+    $snow = getRealSnow($snowid);
     require_once 'view/displayRealSnowDetails.php';
 }
+
+function editRealsnowdetails($snowid){
+    $snow = getRealSnow($snowid);
+    require_once 'view/editRealSnowDetails.php';
+}
+
+
 ?>
 
 

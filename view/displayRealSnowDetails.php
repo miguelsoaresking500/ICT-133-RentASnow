@@ -18,16 +18,27 @@ $title = "RentASnow - Snows"
 
         <table class="table">
             <tr>
-                <tr><th>Code: </th><td><?= $snow['code'] ?></td></tr>
-                <tr><th>Taille:</th><td><?= $snow['length'] ?></td> </tr>
-                <tr><th>État : </th><td><?= getTextState($snow['state']) ?></td> </tr>
-                <tr><th>Disponible :</th><td><?= $snow['available'] ? 'Oui' : 'Non' ?></td> </tr>
+            <tr>
+                <th>Code:</th>
+                <td><?= $snow['code'] ?></td>
+            </tr>
+            <tr>
+                <th>Taille:</th>
+                <td><?= $snow['length'] ?></td>
+            </tr>
+            <tr>
+                <th>État :</th>
+                <td><?= getTextState($snow['state']) ?></td>
+            </tr>
+            <tr>
+                <th>Disponible :</th>
+                <td><?= $snow['available'] ? 'Oui' : 'Non' ?></td>
+            </tr>
             </tr>
 
         </table>
 
-        <h4>Nous n'avons pas de snows de ce type</h4>
-
+        <a href="?action=editRealSnowDetails&snowid=<?=$snowid?>" class="btn btn-primary">Modifier</a>
     </div>
 <?php
 $content = ob_get_clean();

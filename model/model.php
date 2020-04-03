@@ -203,6 +203,29 @@ function updatePasswords()
     }
 }
 
+function updateSnow($snowdata)
+{
+    if(isset($snowdata['available']))
+    {
+        $snowdata['available']=1;
+    }else
+    {
+        $snowdata['available']=0;
+    }
+    require ".constant.php";
+    try {
+        getPDO();
+        $query = "UPDATE snows SET code =:code, length =:length, state =:state,available= :available where id = :snowif;";
+        $statment = getPDO()->prepare($query);//prepare query
+        $statment->execute($snowdata);//execute query
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
 ?>
 
 

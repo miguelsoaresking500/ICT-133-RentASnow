@@ -31,12 +31,12 @@ switch ($action) {
     case 'displayLogin':
         $title = "RentASnow - Login";
         login();
-        break  ;
+        break;
 
     case 'displaySignin':
         $title = "RentASnow - Signin";
         signin();
-        break  ;
+        break;
 
     case 'displaySnowDetails':
         $title = 'RentASnow - Snows';
@@ -46,19 +46,28 @@ switch ($action) {
 
     case 'displayRealSnowDetails':
         $title = 'RentASnow - Snows';
-        $id = $_GET['id'];
-        displayRealsnowdetails($id);
+        $snowid = $_GET['id'];
+        displayRealsnowdetails($snowid);
         break;
 
     case"trySignin":
         trySignin();
         break;
 
+    case"editRealSnowDetails":
+        $snowid = $_GET['snowid'];
+        editRealsnowdetails($snowid);
+        break;
 
+    case "saveSnowDetails":
+        updateSnow($_POST);
+        $_SESSION['flashmessage']='OK';
+        $snowid=$_POST['snowid'];
+        displayRealsnowdetails($snowid);
     case"tryLogin":
         $email = $_POST['email'];
         $password = $_POST['password'];
-        tryLogin($email,$password);
+        tryLogin($email, $password);
         break;
 
     case"Parametres":
@@ -83,7 +92,7 @@ switch ($action) {
         DelUser();
         break;
 
-        default:
+    default:
         $title = 'RentASnow - Accueil';
         home();
         break;
