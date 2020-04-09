@@ -129,8 +129,16 @@ function displayRealsnowdetails($snowid){
 }
 
 function editRealsnowdetails($snowid){
-    $snow = getRealSnow($snowid);
+    $snow = getRealSnow($snowid); //Get snow details
     require_once 'view/editRealSnowDetails.php';
+}
+
+function putInCart($snowid){
+    $snow= getRealSnow($snowid);
+    withdraw($snowid);
+    $_SESSION['cart'][] = $snow;
+    return;
+
 }
 
 

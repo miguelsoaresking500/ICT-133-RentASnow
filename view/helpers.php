@@ -18,3 +18,15 @@ function getTextState($state)
             return '???';
     }
 }
+
+function cartButton(){
+    if(isset($_SESSION['cart'])){
+        return "<a class='btn btn-secondary disabled'></a>";
+    }else{
+        return "<a href='?viewCart' class='btn btn-secondary'>Panier</a>";
+    }
+
+
+}
+
+?>

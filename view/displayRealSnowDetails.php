@@ -39,6 +39,9 @@ $title = "RentASnow - Snows"
         </table>
 
         <a href="?action=editRealSnowDetails&snowid=<?=$snowid?>" class="btn btn-primary">Modifier</a>
+        <?php if ($snow['available']==1){ ?>
+            <a href="?action=putInCart&snowid=<?= $snowid?>" CLASS="btn btn-success">Ajouter au panier</a>
+       <?php } ?>
     </div>
 <?php
 $content = ob_get_clean();

@@ -55,8 +55,15 @@ switch ($action) {
         break;
 
     case"editRealSnowDetails":
+        $snow = $_GET['snowid'];
+        putInCart($snowid);
+        displaysnowdetails();
+        break;
+
+    case"putInCart":
         $snowid = $_GET['snowid'];
-        editRealsnowdetails($snowid);
+        putInCart($snowid);
+        displaysnowdetails();
         break;
 
     case "saveSnowDetails":
@@ -78,6 +85,9 @@ switch ($action) {
         logout();
         break;
 
+    case "viewCart":
+        $cartContent=$_SESSION['cart'];
+    require_once "view/cart.php";
     case"showUsers":
         $title = "RentASnow - showUsers";
         showUsers();

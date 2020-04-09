@@ -63,6 +63,7 @@
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=displaySnows">Snows</a></li>
+                        
                         <!--if qui nous affiche login si on est pas logués et logout si on est logués et le bouton pour l'admin-->
 
                         <?php

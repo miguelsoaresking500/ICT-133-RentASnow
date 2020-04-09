@@ -226,6 +226,24 @@ function updateSnow($snowdata)
     }
 }
 
+function withdraw($snowid)
+{
+    require ".constant.php";
+    try {
+        getPDO();
+        $query = 'UPDATE snows SET available = false where id =:snowid';
+        $statment = getPDO()->prepare($query);//prepare query
+        $statment->execute(['snowid' => $snowid]);//execute query
+        $queryResult = $statment->fetch(pdo::FETCH_ASSOC);//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
+
 ?>
 
 
