@@ -9,7 +9,7 @@
 function getPDO()
 {
 
-    require "C:\ICT-151-RentASnow\.constant.php";
+    require  "C:\ICT-151-RentASnow\Prepa\.constant.php";
     $dbh = new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname, $user, $pass);
     return $dbh;
 }

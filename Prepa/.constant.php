@@ -7,7 +7,7 @@
  * Date: 07.02.2020
  * Time: 08:09
  */
-$user="UserDev";
+$user="root";
 $pass="Mikmik500@";
 $dbhost='localhost';
 $dbname='app_pfinfo';
