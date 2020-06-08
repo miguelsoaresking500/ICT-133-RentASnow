@@ -7,7 +7,7 @@
  */
 
 ?>
-
+    <form action="index.php?action=tryinsert" method="post">
 <FORM>
     <SELECT name="Module" size="1">
         <?php foreach ($module as $modules){?>
@@ -16,21 +16,22 @@
     </SELECT>
 </FORM>
     <FORM>
-    <SELECT name="Module" size="3">
+    <SELECT name="Student" size="3">
         <?php foreach ($student as $students){?>
             <option><?php echo $students["Fullname"];?></option>
         <?php } ?>
     </SELECT>
     </FORM>
     <FORM>
-        <SELECT name="Module" size="1">
+        <SELECT name="Eval" size="1">
             <?php foreach ($eval as $evals){?>
                 <option value="<?php echo $evals["idEvaluation"];?>"><?=$evals["testDescription"]?></option>
             <?php } ?>
         </SELECT>
     </FORM>
-    <input type="text" id="note" name="fname" size="1"  >
+    <input type="text" id="note" name="note" size="1"  >
     <input type="submit" value="OK">
+    </form>
 <?php
-var_dump($evals);
+
 ?>
