@@ -8,7 +8,7 @@
  * Time: 08:09
  */
 $user="root";
-$pass="Mikmik500@";
+$pass="Mikmik500@@";
 $dbhost='localhost';
 $dbname='app_pfinfo';
 ?>

@@ -1,0 +1,6 @@
+SELECT  module.moduleShortName,moduleinstance.fkmodule,moduleinstance.idModuleInstance,evaluation.idEvaluation
+FROM moduleinstance
+INNER JOIN evaluation
+ON evaluation.fkModuleInstance =  moduleinstance.idModuleInstance 
+INNER JOIN moduleinstance
+ON moduleinstance.fkModule = module.idModule;
