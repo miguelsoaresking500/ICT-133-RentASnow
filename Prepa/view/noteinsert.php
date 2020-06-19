@@ -13,7 +13,7 @@ if (isset($_POST["store"])) {
         [
             "grade" => $gradeValue,
             "student" => $idStudent,
-            "eval" => $idEval
+            "eval" => $idEval,
         ]);
 }
 ?>
@@ -29,7 +29,7 @@ if (isset($_POST["store"])) {
     </SELECT>
         <BR>
         <BR>
-    <SELECT name="student" size="3">
+    <SELECT name="student" size="1">
         <?php foreach ($student as $students){?>
             <option value="<?= $student['idPerson'] ?>"><?php echo $students["Fullname"];?></option>
         <?php } ?>
@@ -41,7 +41,20 @@ if (isset($_POST["store"])) {
                 <option value="<?php echo $evals["idEvaluation"];?>"><?=$evals["testDescription"]?></option>
             <?php } ?>
         </SELECT>
-<BR>
+        <BR>
+        <BR>
+        <SELECT name="prof" size="1">
+            <?php foreach ($prof as $profs){?>
+                <option value="<?= $profs['idPerson'] ?>"><?php echo $profs["Fullname"];?></option>
+            <?php } ?>
+        </SELECT>
+        <BR>
+        <BR>
+        <SELECT name="badeval" size="1">
+            <?php foreach ($badEval as $badEvals){?>
+                <option value="<?php echo $badEvals["idGrade"];?>"><?=$badEvals["gradeValue"]?></option>
+            <?php } ?>
+        <BR>
         <BR>
     <input type="text" name="grade" id="grade" name="note" size="1"  >
     <input type="submit" value="OK">

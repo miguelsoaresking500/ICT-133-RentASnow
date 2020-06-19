@@ -59,6 +59,29 @@ ORDER BY personLastName ASC ";
     }
 }
 
+
+function getProf()
+{
+    {
+        require ".constant.php";
+        try {
+            $dbh = getPDO();
+            $query = "SELECT person.idPerson,person.personFirstName,person.personLastName, CONCAT(personFirstName, ' ', personLastName) AS Fullname
+FROM person
+where role = 1 or role = 2
+ORDER BY personLastName ASC ";
+            $statment = getPDO()->prepare($query);//prepare query
+            $statment->execute();//execute query
+            $queryResult = $statment->fetchAll(pdo::FETCH_ASSOC);//prepare result for client
+            $dbh = null;
+            return $queryResult;
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            return null;
+        }
+    }
+}
+
 function getEvals()
 {
     {
@@ -78,6 +101,29 @@ FROM evaluation";
         }
     }
 }
+
+function getBadEvals()
+{
+    {
+        require ".constant.php";
+        try {
+            $dbh = getPDO();
+            $query = "SELECT * FROM app_pfinfo.person  inner join app_pfinfo.grade on person.idPerson=grade.fkStudent  where role = 0 and gradeValue <4 and idPerson = 501";
+            $statment = getPDO()->prepare($query);//prepare query
+            $statment->execute();//execute query
+            $queryResult = $statment->fetchAll(pdo::FETCH_ASSOC);//prepare result for client
+            $dbh = null;
+            return $queryResult;
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            return null;
+        }
+    }
+}
+
+
+
+
 
 
 

@@ -9,7 +9,9 @@
 require_once 'model/model.php';
 
 function Modules()
-{
+{   
+    $badEval = getBadEvals();
+    $prof  = getProf();
     $module = getModules();
     $student = getStudent();
     $eval = getEvals();
