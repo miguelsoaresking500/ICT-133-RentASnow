@@ -128,7 +128,7 @@ function getLogs()
         require ".constant.php";
         try {
             $dbh =getPDO();
-            $query = "INSERT INTO filmmakers (filmmakersnumber,firstname,lastname,birthname,nationality)VALUES(:filmmakersnumber,:firstname,:lastname,:birthname,:nationality) ";
+            $query = "INSERT INTO users (email,firstname,lastname,password)VALUES(:email,:firstname,:lastname,:password) ";
             $statement = getPDO()->prepare($query);//prepare query
             $statement->execute($users);//execute query
             // $filmMakers['id']=$dbh -> lastIsertId();
@@ -146,7 +146,7 @@ function getLogs()
         require ".constant.php";
         try {
             $dbh =getPDO();
-            $query = "DELETE FROM filmmakers  WHERE id=:id";
+            $query = "DELETE FROM users  WHERE id=:id";
             $statement = getPDO()->prepare($query);//prepare query
             $statement->execute([':id'=>$users]);//execute query
             $dbh = null;
